@@ -17,7 +17,7 @@ This lab focuses on implementing and testing [brief description of topic, e.g., 
 ## Structure
  
 ```text
-labXX/
+lab02/
 ├── public/         # Public headers
 ├── private/        # Implementation files
 ├── test/           # Unit tests
