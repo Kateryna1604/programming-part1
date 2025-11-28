@@ -3,7 +3,11 @@
 
 int main(void){
     int mode;
-double A, P, r, t, n;
+    double A; 
+    double P; 
+    double r; 
+    double t; 
+    double n; 
 
 
 printf("choose the option:\n Simple - press: 1; Compound - press: 2\n ");
