@@ -271,3 +271,74 @@ __libc_start_call_main (main=main@entry=0x5555555551c9 <main>, argc=argc@entry=1
 warning: 74     ../sysdeps/nptl/libc_start_call_main.h: No such file or directory
 (gdb) n
 result: 22509.375000 [Inferior 1 (process 64998) exited normally]
+
+
+## Report04_03
+
+
+root@LAPTOP-R1MQP4P8:~/programming-part1/lab04# gdb ./lab04
+GNU gdb (Ubuntu 15.0.50.20240403-0ubuntu1) 15.0.50.20240403-git
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./lab04...
+(gdb) break main
+Breakpoint 1 at 0x11b5: file lab04_03.c, line 5.
+(gdb) run
+Starting program: /root/programming-part1/lab04/lab04 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+Downloading separate debug info for system-supplied DSO at 0x7ffff7fc3000
+[Thread debugging using libthread_db enabled]                                                                                                                                    
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main () at lab04_03.c:5
+5       int main(void) {
+(gdb) n
+8           const double x0_big = 0;
+(gdb) n
+9           const double y0_big = 0;
+(gdb) n
+10          const double x0_small = 1;
+(gdb) n
+11          const double y0_small = 0;
+(gdb) n
+13          const double EPS = 1e-9;
+(gdb) n
+14          const double R_big = 1.5;
+(gdb) n
+15          const double R_small = 1;
+(gdb) n
+20          printf("Enter x and y: ");
+(gdb) n
+21          if (scanf("%lf%lf", &x, &y) != 2 ){
+(gdb) n
+Enter x and y: 1 0
+26          const double distance_big = pow(x - x0_big, 2) + pow(y - y0_big, 2);
+(gdb) n
+27          const double distance_small = pow(x - x0_small, 2) + pow(y - y0_small, 2);
+(gdb) n
+29          bool inside_big = distance_big <= R_big * R_big + EPS;
+(gdb) n
+30          bool inside_small = distance_small <= R_small * R_small + EPS;
+(gdb) n
+32          if(inside_big && inside_small){
+(gdb) n
+33              printf("YES");
+(gdb) n
+39       return 0;
