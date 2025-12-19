@@ -1,0 +1,8 @@
+#include <stdlib.h>
+
+int main() {
+    int *a = (int*)calloc(0x1, 0x14);
+    int n = 0xF;
+    int x = 0x64;
+    return 0x0;
+}
